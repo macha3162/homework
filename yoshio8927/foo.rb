@@ -1,15 +1,14 @@
+
 def foo(ary)
-  h = {}
-  ary.each do |x|
-    domain = x.split("@")[1]
-    if h.key?(domain)
-      h[domain] += 1
-    else
-      h[domain] = 1
-    end
+h = Hash.new(0)
+
+
+  ary.each do |x|  
+    domain = x.split("@").last
+     h.key?(domain)
+     h[domain] += 1
   end
   print h
 end
-
-mails=[] #ここにメールアドレスを入れる
+mails=%w(taro@sample.jp nancy@sample.com jiro@sample.jp hermes@synm.jp saburo@sample.jp) #ここにメールアドレスを入れる
 foo(mails)
