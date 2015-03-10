@@ -5,6 +5,7 @@ class ResultsController < ApplicationController
     pp '@@@@@@@@@@@@@@@@@@@@@@@'
     pp params
     pp '@@@@@@@@@@@@@@@@@@@@@@@'
-    @results = Adress.where(code: params[:code]).all
+    test = params[:code]
+    @results = Adress.where("code like '%" + test + "%'").all
   end
 end
