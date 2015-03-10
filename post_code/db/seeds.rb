@@ -9,7 +9,7 @@ require 'pp'
 
 Adress.destroy_all
 
-CSV.foreach('db/small_ken.csv') { |row|
+CSV.foreach('db/x-ken-all-utf8.csv') { |row|
  a = Adress.create({code: row[2], prefecture: row[6], city: row[7], area: row[8]})
  pp a
   puts a.errors.full_messages
