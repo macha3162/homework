@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   #get 'welcome/index'
   #resources :results
   root "results#show"
+=======
+  get 'home/index'
+
+>>>>>>> 776067244c277c0552080d84311c82df7a9b01f5
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
