@@ -1,5 +1,8 @@
 require 'csv'
 
-f = CSV.open('small_ken.csv', 'r')
-f.puts
-f.close
+#CSV.foreach('db/small_ken.csv') { |row|
+#  puts row[2] + '"' + row[6] + row[7] + row[8]
+#}
+
+
+CSV.foreach('db/small_ken.csv') { |row|
