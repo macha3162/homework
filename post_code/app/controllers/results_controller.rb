@@ -22,6 +22,7 @@ class ResultsController < ApplicationController
     else
       test = " "
     end
-    @results = Adress.where("code like '%" + test + "%'").all
+     test = params[:code] || " "
+    @results = Adress.where(["code like ?", "#{test}%"]).all
   end
 end
