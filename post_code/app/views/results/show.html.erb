@@ -1,16 +1,14 @@
 
 
-<% if @results.present? %>
-<hr>
-<table>
-  <tr><th>郵便番号</th><th>都道府県</th><th>市町村</th><th>町域</th></tr>
-  <% @results.each do |r| %>
-      <tr>
-        <td><%= r.code %></td>
-        <td><%= r.prefecture %></td>
-        <td><%= r.city %></td>
-        <td><%= r.area %></td>
-      </tr>
-  <% end %>
-</table>
-<% end %>
+    <hr>
+    <table>
+      <tr><th>郵便番号</th><th>都道府県</th><th>市町村</th><th>町域</th></tr>
+
+          <tr>
+            <td><%= @result.code %></td>
+            <td><%= @result.prefecture %></td>
+            <td><%= @result.city %></td>
+            <td><%= @result.area %></td>
+          </tr>
+
+    </table>
