@@ -2,30 +2,28 @@ require 'pp'
 
 class ResultsController < ApplicationController
 
-
-
   def index
-    pp '@@@@@@@@@@@@@@@@@@@@@@@'
-    pp params
-    pp '@@@@@@@@@@@@@@@@@@@@@@@'
+
 
     if test = params[:code]
-    @results = Adress.where(["code like ?", "#{test}%"]).all
-    elsif test = params[:prefecture]
-    @results = Adress.where(["prefecture like ?", "#{test}%"]).all
-    elsif test.present?
+      if (3..6).include?(params[:code].size)
+        @results = Adress.where(["code like ?", "#{test}%"]).all
+      elsif params[:code].size == 7
+        pp '@@@@@@@@@@@@@@@@@@@@@@@'
+        pp Adress.where(code: params[:code]).first
+        pp '@@@@@@@@@@@@@@@@@@@@@@@'
+        redirect_to result_url(Adress.where(code: params[:code]).first)
+      elsif
+       redirect_to(:back)
       end
+    elsif test = params[:prefecture]
+      @results = Adress.where(["prefecture like ?", "#{test}%"]).all
+    elsif test.present?
+    end
   end
 
 
-
   def show
-    pp '@@@@@@@@@@@@@@@@@@@@@@@'
-    pp params
-    pp '@@@@@@@@@@@@@@@@@@@@@@@'
-
-
-
     @result = Adress.find(params[:id])
   end
 
