@@ -6,11 +6,8 @@ class ResultsController < ApplicationController
     pp params
     pp '@@@@@@@@@@@@@@@@@@@@@@@'
 
-    if test = params[:code]
-    else
-      test = " "
-    end
-    @results = Adress.where("code like '%" + test + "%'").all
+    test = params[:code] || " "
+    @results = Adress.where(["code like ?", "#{test}%"]).all
   end
 
   def show
@@ -18,11 +15,7 @@ class ResultsController < ApplicationController
     pp params
     pp '@@@@@@@@@@@@@@@@@@@@@@@'
 
-    if test = params[:code]
-    else
-      test = " "
-    end
-     test = params[:code] || " "
+    test = params[:code] || " "
     @results = Adress.where(["code like ?", "#{test}%"]).all
   end
 end
