@@ -1,11 +1,12 @@
 require 'pp'
 
 class ResultsController < ApplicationController
-  def show
+  def index
     pp '@@@@@@@@@@@@@@@@@@@@@@@'
     pp params
     pp '@@@@@@@@@@@@@@@@@@@@@@@'
-    test = params[:code]
-    @results = Adress.where("code like '%" + test + "%'").all
+
+     test = params[:code] || " "
+    @results = Adress.where(["code like ?", "#{test}%"]).all
   end
 end
