@@ -1,26 +1,32 @@
+<div clas="col-md-4">
+  <%= form_tag results_path, {:method => "get", class: 'form-inline'} do %>
+      <div class="form-group">
+        <p>
 
-<%= form_tag results_path, {:method => "get"} do %>
-    <div class="form-group">
-      <%= label_tag :都道府県 %><br>
-      <%= text_field_tag :prefecture ,params[:prefecture] , class:"form-control", placeholder:"例:東京都"%>
-    </p>
+          <%= label_tag :都道府県 %><br>
+          <%= text_field_tag :prefecture, params[:prefecture], class: "form-control", placeholder: "例:東京都" %>
+        </p>
 
-    <p>
-      <%= submit_tag :検索, class:"btn btn-info" %>
-
-    </div>
-<% end %>
-
-
-
-<%= form_tag results_path, {:method => "get"} do %>
-
-    <div class="form-group">
-      <label for="exampleInputEmail1">郵便番号</label><br/>
-      <%= text_field_tag :code ,params[:code], class:"form-control", placeholder:"0000000(半角数字)" %>
+        <p>
+          <%= submit_tag :検索, class: "btn btn-info" %>
+        </p>
+      </div>
+  <% end %>
 
 
-      <%= submit_tag :検索, class:"btn btn-info" %>
-    </div>
+  <%= form_tag results_path, {:method => "get", class: 'form-inline'} do %>
 
-<% end %>
+      <div class="form-group">
+        <p>
+          <label for="exampleInputEmail1">郵便番号</label><br/>
+          <%= text_field_tag :code, params[:code], class: "form-control ", placeholder: "0000000(半角数字)" %>
+        </p>
+
+        <p>
+          <%= submit_tag :検索, class: "btn btn-info" %>
+        </p>
+      </div>
+
+  <% end %>
+
+</div>
