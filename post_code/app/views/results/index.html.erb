@@ -9,12 +9,12 @@
       <div class="form-group">
         <div class="row">
           <div class="col-md-<%= w %>">
-        <%= label_tag :都道府県 %><br>
-        <%= text_field_tag :prefecture, params[:prefecture], class: "form-control", placeholder: "例:東京都" %>
-     </div>
-     </div>
+            <%= label_tag :都道府県 %><br>
+            <%= text_field_tag :prefecture, params[:prefecture], class: "form-control", placeholder: "例:東京都" %>
+          </div>
+        </div>
         <%= submit_tag :検索, class: "btn btn-info" %>
-     </div>
+      </div>
 
   <% end %>
 
@@ -23,8 +23,8 @@
       <div class="form-group">
         <div class="row">
           <div class="col-md-3">
-        <%= label_tag :郵便番号 %><br>
-        <%= text_field_tag :code, params[:code], class: "form-control ", placeholder: "0000000(半角数字)" %>
+            <%= label_tag :郵便番号 %><br>
+            <%= text_field_tag :code, params[:code], class: "form-control ", placeholder: "0000000(半角数字)" %>
           </div>
         </div>
         <%= submit_tag :検索, class: "btn btn-info" %>
