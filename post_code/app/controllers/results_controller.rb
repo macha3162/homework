@@ -19,7 +19,9 @@ class ResultsController < ApplicationController
     elsif test = params[:prefecture]
       @results = Adress.where(["prefecture like ?", "#{test}%"]).all
     elsif test.present?
+else
     end
+
   end
 
 
