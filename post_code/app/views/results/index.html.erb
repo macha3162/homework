@@ -1,31 +1,34 @@
-<div class="page-header,col-md-4">
+<% w=2 %>
+<div class="page-header">
   <h1>検索結果
     <small><%= params[:code] %><%= params[:prefecture] %></small>
   </h1>
 </div>
 <div>
-  <%= form_tag results_path, {:method => "get", class: 'form-inline'} do %>
-      <p>
+  <%= form_tag results_path, {:method => "get"} do %>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-<%= w %>">
         <%= label_tag :都道府県 %><br>
         <%= text_field_tag :prefecture, params[:prefecture], class: "form-control", placeholder: "例:東京都" %>
-      </p>
-
-      <p>
+     </div>
+     </div>
         <%= submit_tag :検索, class: "btn btn-info" %>
-      </p>
+     </div>
 
   <% end %>
 
 
-  <%= form_tag results_path, {:method => "get", class: 'form-inline'} do %>
-      <p>
+  <%= form_tag results_path, {:method => "get"} do %>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-3">
         <%= label_tag :郵便番号 %><br>
         <%= text_field_tag :code, params[:code], class: "form-control ", placeholder: "0000000(半角数字)" %>
-      </p>
-
-      <p>
+          </div>
+        </div>
         <%= submit_tag :検索, class: "btn btn-info" %>
-      </p>
+      </div>
 
   <% end %>
 </div>
